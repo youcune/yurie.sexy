@@ -72,3 +72,10 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
+
+activate :deploy do |deploy|
+  deploy.method = :sftp
+  deploy.host = 'louvre'
+  deploy.port = 2222
+  deploy.path = '/web/yurie.sexy'
+end
