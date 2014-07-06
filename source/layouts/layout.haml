@@ -1,0 +1,26 @@
+!!! 5
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{name: 'viewport', content: 'initial-scale=1.0,user-scalable=no'}
+    %title yurie.sexy
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+  %body
+    %header#header
+      .container
+        %h1 yurie.sexy
+    %section#container
+      .container
+        = yield
+    %footer#footer
+      .container
+        %p#copy.pull-right
+          = link_to '@youcune', 'http://youcune.com/?utm_source=yurie_portal&utm_medium=copy'
+        %p#social-buttons.pull-left
+          %span#social-bottons-guide SHARE <i class="fa fa-caret-right"></i>
+          = link_to(image_tag('//youcune.com/images/mini_social_icons/twitter.png', alt: 'twitter', width: 20, height: 20), 'https://twitter.com/intent/tweet?source=http%3A%2F%2Fyurie.sexy%2F&text=http%3A%2F%2Fyurie.sexy%2F')
+          = link_to(image_tag('//youcune.com/images/mini_social_icons/googleplus.png', alt: 'Google+', width: 20, height: 20), 'https://plus.google.com/share?url=http%3A%2F%2Fyurie.sexy%2F')
+          = link_to(image_tag('//youcune.com/images/mini_social_icons/facebook.png', alt: 'facebook', width: 20, height: 20), 'https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fyurie.sexy%2F&t=yurie.sexy')
+          = link_to(image_tag('//youcune.com/images/mini_social_icons/hatena_bookmark.png', alt: 'はてなブックマーク', width: 20, height: 20), 'http://b.hatena.ne.jp/entry/yurie.sexy/')
+          = link_to(image_tag('//youcune.com/images/mini_social_icons/line.png', alt: 'LINE', width: 20, height: 20), 'http://line.me/R/msg/text/?http%3A%2F%2Fyurie.sexy%2F')

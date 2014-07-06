@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+// -------------------------------------------------------------------
+// Bootstrap Overridden Variables
+// -------------------------------------------------------------------
+$font-size-h1:            40px;
+$font-size-h2:            20px;
+$font-family-sans-serif:  'Lucida Grande', Verdana, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+
+// -------------------------------------------------------------------
+// Import Frameworks
+// -------------------------------------------------------------------
+@import 'bootstrap-custom';
+@import 'font-awesome';
+
+// -------------------------------------------------------------------
+// Mixins
+// -------------------------------------------------------------------
+@mixin opacity($bg-color) {
+  background-color: $bg-color;
+  opacity: .85;
+}
+
+// -------------------------------------------------------------------
+// Custom Styles
+// -------------------------------------------------------------------
+body {
+  @media (max-width: $screen-xs-max) {
+    background: $body-bg url(/images/yurie-1200.jpg) right 0% no-repeat;
+    background-size: 183px 600px;
+  }
+  @media (min-width: $screen-sm-min) {
+    background: $body-bg url(/images/yurie-1600.jpg) 75% 20px no-repeat;
+    background-size: 244px 800px;
+  }
+  > #header {
+    @media (max-width: $screen-xs-max) {
+      @include opacity($body-bg);
+    }
+    margin-top: 160px;
+    padding-bottom: $line-height-computed;
+  }
+  > #container {
+    @media (max-width: $screen-xs-max) {
+      @include opacity($body-bg);
+    }
+  }
+  > #footer {
+    @include opacity($text-color);
+    color: $body-bg;
+    padding: $line-height-computed/2 0;
+    p {
+      margin-bottom: 0;
+    }
+    a {
+      color: lighten($link-color, 25%);
+      text-decoration: underline; // Override
+    }
+    a:hover, a:active {
+      color: darken(lighten($link-color, 25%), 15%);
+    }
+    #social-bottons-guide {
+      vertical-align: bottom;
+      i.fa {
+        font-size: 20px;
+        vertical-align: bottom;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  #profile-panel {
+    @include opacity($body-bg);
+    h2 {
+      margin-top: $line-height-computed / 2;
+    }
+    border: 1px solid $panel-default-border;
+    border-radius: $panel-border-radius;
+    bottom: 60px;
+    right: 10%;
+    position: fixed;
+    width: 320px;
+  }
+}
