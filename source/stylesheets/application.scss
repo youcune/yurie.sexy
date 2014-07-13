@@ -88,5 +88,6 @@ body {
 }
 
 .btn-yo {
-  @include button-variant(#ffffff, #9b59b6, darken(#9b59b6, 5%));
+  @include button-variant(#9b59b6, lighten(#9b59b6, 100%), darken(#9b59b6, 5%));
+  font-weight: bold;
 }
