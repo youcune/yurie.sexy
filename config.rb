@@ -40,12 +40,17 @@
 #   activate :livereload
 # end
 
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def icon(icon, text="", html_options={})
+    content_class = "fa fa-#{icon}"
+    content_class << " #{html_options[:class]}" if html_options.key?(:class)
+    html_options[:class] = content_class
+
+    html = content_tag(:i, nil, html_options)
+    html << " #{text}" unless text.blank?
+    html.html_safe
+  end
+end
 
 set :css_dir, 'stylesheets'
 

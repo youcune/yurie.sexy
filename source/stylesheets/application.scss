@@ -18,7 +18,7 @@ $font-family-sans-serif:  'Lucida Grande', Verdana, 'Hiragino Kaku Gothic ProN',
 // -------------------------------------------------------------------
 @mixin opacity($bg-color) {
   background-color: $bg-color;
-  opacity: .85;
+  opacity: .825;
 }
 
 // -------------------------------------------------------------------
@@ -26,7 +26,7 @@ $font-family-sans-serif:  'Lucida Grande', Verdana, 'Hiragino Kaku Gothic ProN',
 // -------------------------------------------------------------------
 body {
   @media (max-width: $screen-xs-max) {
-    background: $body-bg url(/images/yurie-1200.jpg) right 0% no-repeat;
+    background: $body-bg url(/images/yurie-1200.jpg) 95% 20px no-repeat;
     background-size: 183px 600px;
   }
   @media (min-width: $screen-sm-min) {
@@ -36,8 +36,8 @@ body {
   > #header {
     @media (max-width: $screen-xs-max) {
       @include opacity($body-bg);
+      margin-top: 160px;
     }
-    margin-top: 160px;
     padding-bottom: $line-height-computed;
   }
   > #container {
@@ -82,4 +82,9 @@ body {
     position: fixed;
     width: 320px;
   }
+}
+
+.btn-yo {
+  @include button-variant(#9b59b6, lighten(#9b59b6, 100%), darken(#9b59b6, 5%));
+  font-weight: bold;
 }
