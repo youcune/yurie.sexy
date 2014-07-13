@@ -38,9 +38,6 @@ body {
       @include opacity($body-bg);
       margin-top: 160px;
     }
-    @media (min-width: $screen-sm-min) {
-      margin-top: 100px;
-    }
     padding-bottom: $line-height-computed;
   }
   > #container {
